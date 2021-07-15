@@ -27,11 +27,15 @@
             </tr>
             </thead>
             <tbody>
-            <tr class="result" th:each="payment : ${payments}">
-                <th scope="row">[[${payment.index}]]</th>
-                <td>[[${payment.date}]]</td>
-                <td>[[${payment.agent}]]</td>
-                <td>[[${payment.amount}]]</td>
+            <tr class="result" th:each="payment,iter : ${payments}">
+                <td th:text="${iter.index} + 1">порядковый номер</td>
+                <td th:text="${payment.date}">дата</td>
+                <td th:text="${payment.agent}">контрагент</td>
+                <td th:text="${payment.amount}">сумма</td>
+            </tr>
+            <tr>
+                <td colspan="3" />
+                <td><b th:text="${#aggregates.sum(payments.![amount])}"/></td>
             </tr>
             </tbody>
         </table>

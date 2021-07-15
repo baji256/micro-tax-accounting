@@ -4,7 +4,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class AccountingApplication
+open class AccountingApplication
 
 fun main(args: Array<String>) {
     runApplication<AccountingApplication>(*args)

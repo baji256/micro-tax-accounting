@@ -1,6 +1,17 @@
 spring:
+  application:
+    name: micro-accounting
   thymeleaf:
     reactive:
       max-chunk-size: 8192
-  application:
-    name: micro-accounting
+  datasource:
+    name: postgres
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: postgres
+    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=micro_accounting
+  jpa:
+    hibernate:
+    ddl-auto: update
+    generate-ddl: true
+    show-sql: true
