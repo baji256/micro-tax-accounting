@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link data-th-href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <link data-th-href="@{/css/main.css}" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="row">
+        <div id="title">
+            <h1 th:text="${title}">APPLICATION TITLE</h1>
+            <p th:text="${description}">APPLICATION DESCRIPTION!</p>
+        </div>
+        <table id="payments" class="table table-sm">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Дата</th>
+                <th scope="col">Контрагент</th>
+                <th scope="col">Сумма, руб.</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="result" th:each="payment : ${payments}">
+                <th scope="row">[[${payment.index}]]</th>
+                <td>[[${payment.date}]]</td>
+                <td>[[${payment.agent}]]</td>
+                <td>[[${payment.amount}]]</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
